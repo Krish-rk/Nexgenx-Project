@@ -1,0 +1,44 @@
+GET http://localhost:3000/users/
+Authorization: Bearer JhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJhaHVsMTIzIiwiaWF0IjoxNzE4ODIwNzg4fQ.OxtXtfqNyGDGr3VgXtlAXzG6Lu2CIb0BwOUikK-9mFU
+
+###
+
+GET http://localhost:3000/users/1/
+
+###
+
+POST http://localhost:3000/users/
+Content-Type: application/json
+
+{    
+    "username": "",
+    "password": "Dhanush@4",
+    "gender":"male",
+    "location":"Mumbai"
+}
+
+###
+
+POST http://localhost:3000/login/
+Content-Type: application/json
+
+{    
+    "username": "Dhanu",
+    "password": "Dhanush@456"
+}
+
+###
+
+PUT http://localhost:3000/users/1
+Authorization: Bearer JWT_TOKEN
+Content-Type: application/json
+
+{
+    "name": "Rahul Updated",
+    "gender": "male",
+    "location": "Delhi"
+}
+
+###
+DELETE http://localhost:3000/users/14
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJhaHVsMTIzIiwiaWF0IjoxNzE4ODIwNzg4fQ.OxtXtfqNyGDGr3VgXtlAXzG6Lu2CIb0BwOUikK-9mFU
