@@ -4,9 +4,13 @@ const { open } = require("sqlite");
 const sqlite3 = require("sqlite3");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const dotenv = require("dotenv");
 
 const dbPath = path.join(__dirname, "nexgenx.db");
 const app = express();
+dotenv.config(); // Ensure this is at the top
+console.log(dotenv.config());
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
 
@@ -15,7 +19,7 @@ let db = null;
 const initializeDBAndServer = async () => {
   try {
     db = await open({ filename: dbPath, driver: sqlite3.Database });
-    app.listen(3000, () => {
+    app.listen(port, () => {
       console.log("Server Running at http://localhost:3000/");
     });
   } catch (e) {
